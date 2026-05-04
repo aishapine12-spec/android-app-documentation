@@ -1,119 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Android App Documentation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android Application Documentation</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fb;
-      color: #333;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f9;
+  color: #333;
+}
 
-    header {
-      background: #0d47a1;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  background: #0d47a1;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
 
-    section {
-      padding: 20px;
-      margin: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+section {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-    h2 {
-      color: #0d47a1;
-    }
+h2 {
+  color: #0d47a1;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
 
-    ul {
-      line-height: 1.8;
-    }
+ul {
+  line-height: 1.8;
+}
 
-    .diagram {
-      text-align: center;
-      margin-top: 20px;
-    }
+pre {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #eee;
-      margin-top: 20px;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #eee;
+  margin-top: 20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>📱 Android Application Documentation</h1>
-  <p>Education & Assessment App</p>
+<h1>📱 Android Application Documentation</h1>
+<p>(Based on Pine Education App)</p>
 </header>
 
 <section>
-  <h2>🏗️ Architecture</h2>
-  <pre>
-Android App → REST API → Backend → Database
-  </pre>
+<h2>1. Technology Stack</h2>
+
+<h3>Frontend (Android)</h3>
+<ul>
+<li>Language: Kotlin</li>
+<li>Architecture: MVVM (Model-View-ViewModel)</li>
+<li>UI Components:
+  <ul>
+    <li>XML Layouts</li>
+    <li>RecyclerView</li>
+    <li>Fragments & Activities</li>
+  </ul>
+</li>
+<li>Networking:
+  <ul>
+    <li>Retrofit</li>
+    <li>OkHttp</li>
+  </ul>
+</li>
+</ul>
+
+<h3>Backend Integration</h3>
+<ul>
+<li>REST APIs (JSON-based)</li>
+<li>Authentication APIs</li>
+<li>Assessment & Question APIs</li>
+</ul>
+
+<h3>Database / Storage</h3>
+<ul>
+<li>Local Storage: SharedPreferences</li>
+<li>Remote DB: Managed via API services</li>
+</ul>
+
+<h3>Tools & Platforms</h3>
+<ul>
+<li>IDE: Android Studio</li>
+<li>Build System: Gradle</li>
+</ul>
 </section>
 
 <section>
-  <h2>⚙️ Technology Stack</h2>
+<h2>2. Features</h2>
+
+<h3>User Features</h3>
+<ul>
+<li>User Registration & Login</li>
+<li>Profile Management</li>
+<li>Section-wise Question Navigation</li>
+<li>Palette View for Question Review</li>
+<li>Attempt MCQ, MSQ, Short Answer Questions</li>
+<li>Resume In-progress Tests</li>
+<li>Submit & Review Assessments</li>
+</ul>
+
+<h3>Assessment Features</h3>
+<ul>
+<li>Section-based exam flow</li>
+<li>Question palette navigation</li>
+<li>Real-time answer saving</li>
+<li>Multiple question types:
   <ul>
-    <li>Kotlin + MVVM</li>
-    <li>Retrofit, OkHttp</li>
-    <li>SharedPreferences</li>
-    <li>REST APIs</li>
+    <li>MCQ (Single choice)</li>
+    <li>MSQ (Multiple choice)</li>
+    <li>Short Answer</li>
   </ul>
+</li>
+</ul>
+
+<h3>Navigation Features</h3>
+<ul>
+<li>Switch between sections</li>
+<li>Jump to specific questions from palette</li>
+<li>Dynamic section title updates</li>
+</ul>
 </section>
 
 <section>
-  <h2>🚀 Features</h2>
+<h2>3. Testing</h2>
+
+<h3>Tests Added</h3>
+<ul>
+<li>Basic UI validation</li>
+<li>API integration testing (manual)</li>
+<li>Question navigation flow testing</li>
+<li>Answer submission validation</li>
+</ul>
+
+<h3>Tests To Be Added</h3>
+<ul>
+<li>Unit Testing (ViewModel & Repository)</li>
+<li>UI Testing (Espresso)</li>
+<li>Integration Testing (API + UI flow)</li>
+<li>Edge Case Testing:
   <ul>
-    <li>User Registration & Login</li>
-    <li>MCQ, MSQ, Short Answer</li>
-    <li>Section Navigation</li>
-    <li>Palette Review</li>
+    <li>Network failure</li>
+    <li>Session timeout</li>
+    <li>Partial submissions</li>
   </ul>
+</li>
+<li>Load Testing for exam scenarios</li>
+</ul>
 </section>
 
 <section>
-  <h2>💳 Payment</h2>
+<h2>4. Payment Gateway Technology</h2>
+<p><b>Status:</b> Working on</p>
+
+<h3>Supported Payment Types</h3>
+<ul>
+<li>In-App Purchases (Coins system)</li>
+<li>Subscriptions (Premium plans)</li>
+</ul>
+
+<h3>Technologies Used</h3>
+<ul>
+<li>Google Play Billing Library
   <ul>
-    <li>Google Play Billing</li>
-    <li>In-App Purchases</li>
-    <li>Subscriptions</li>
+    <li>In-App Products (INAPP)</li>
+    <li>Subscriptions (SUBS)</li>
   </ul>
+</li>
+</ul>
+
+<h3>Flow</h3>
+<ol>
+<li>User selects coin/package</li>
+<li>Google Play purchase initiated</li>
+<li>Purchase verified</li>
+<li>Coins credited via backend</li>
+<li>UI updated with new balance</li>
+</ol>
+
+<h3>Backend Requirements</h3>
+<ul>
+<li>Purchase token validation</li>
+<li>Secure transaction verification</li>
+<li>Coin balance management</li>
+</ul>
 </section>
 
 <section>
-  <h2>🔐 Security</h2>
+<h2>5. User Registration & Login</h2>
+
+<h3>Registration Flow</h3>
+<ol>
+<li>User enters:
   <ul>
-    <li>HTTPS APIs</li>
-    <li>JWT Authentication</li>
-    <li>Secure Storage</li>
+    <li>Phone</li>
+    <li>Password</li>
   </ul>
+</li>
+<li>API Request sent to backend:</li>
+</ol>
+
+<pre>
+{
+ "number": "1234567890",
+ "password": "******"
+}
+</pre>
+
+<ol start="3">
+<li>Backend Response:
+  <ul>
+    <li>Success → User created</li>
+    <li>Failure → Error message</li>
+  </ul>
+</li>
+<li>On Success:
+  <ul>
+    <li>Store token locally</li>
+    <li>Navigate to Dashboard</li>
+  </ul>
+</li>
+</ol>
+
+<h3>Login Flow</h3>
+<ol>
+<li>User enters:
+  <ul>
+    <li>Phone</li>
+    <li>Password</li>
+  </ul>
+</li>
+<li>API Request sent to backend:</li>
+</ol>
+
+<pre>
+{
+ "number": "1234567890",
+ "password": "******"
+}
+</pre>
+
+<ol start="3">
+<li>Backend Response:
+  <ul>
+    <li>Success → User created</li>
+    <li>Failure → Error message</li>
+  </ul>
+</li>
+<li>On Success:
+  <ul>
+    <li>Store token locally & Navigate to Dashboard</li>
+  </ul>
+</li>
+</ol>
+
+<h3>Authentication</h3>
+<ul>
+<li>Token-based authentication (JWT or similar)</li>
+<li>Token stored securely (SharedPreferences)</li>
+</ul>
+
+<h3>Validation Rules</h3>
+<ul>
+<li>Mobile number format validation</li>
+<li>Password strength check</li>
+<li>Required field validation</li>
+</ul>
 </section>
 
 <section>
-  <h2>🚀 Future Enhancements</h2>
-  <ul>
-    <li>AI Analysis</li>
-    <li>Leaderboard</li>
-    <li>Offline Mode</li>
-  </ul>
+<h2>6. Security Considerations</h2>
+<ul>
+<li>HTTPS API communication</li>
+<li>Token-based authentication</li>
+<li>Secure storage of credentials</li>
+<li>Purchase verification on backend</li>
+</ul>
 </section>
 
-  
+<section>
+<h2>7. Future Enhancements</h2>
+<ul>
+<li>Offline test mode</li>
+<li>AI-based performance analysis</li>
+<li>Leaderboard & ranking system</li>
+<li>Advanced analytics dashboard</li>
+<li>Push notifications for exams</li>
+</ul>
+</section>
+
+<section>
+<h2>8. Summary</h2>
+<ul>
+<li>Structured exam flow</li>
+<li>Multiple question types</li>
+<li>Seamless navigation</li>
+<li>In-app monetization via Google Play Billing</li>
+</ul>
+</section>
+
 <footer>
-  <p>© Aisha Singh | Android Developer</p>
+<p><b>Aisha Singh</b> – Android Application Developer</p>
 </footer>
 
 </body>
